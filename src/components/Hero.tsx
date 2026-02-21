@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -66,7 +65,7 @@ export default function Hero() {
           Build Products, Not Just Projects. Learn while you build.
         </motion.p>
 
-        {/* Video Placeholder */}
+        {/* Video */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -77,20 +76,21 @@ export default function Hero() {
           <div className="absolute -inset-4 bg-gradient-to-r from-primary-500/30 via-accent-500/30 to-primary-500/30 rounded-3xl blur-2xl pulse-glow" />
           
           {/* Video container */}
-          <div className="relative aspect-video bg-gradient-to-br from-dark-900 via-dark-900/95 to-primary-900/30 rounded-2xl overflow-hidden border border-white/10 cursor-pointer group">
-            {/* Play button */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-colors"
-              >
-                <Play className="w-8 h-8 text-white fill-white ml-1" />
-              </motion.div>
-            </div>
-            <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-white/40">
-              Video Coming Soon
-            </span>
+          <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl" style={{ paddingTop: '56.25%' }}>
+            <iframe
+              src="https://player.mediadelivery.net/embed/546900/9abfd383-b962-4c1e-b883-a75e4745c551?autoplay=false&loop=true&muted=false&preload=true&responsive=true"
+              loading="lazy"
+              style={{
+                border: 0,
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                height: '100%',
+                width: '100%',
+              }}
+              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+            />
           </div>
         </motion.div>
 
